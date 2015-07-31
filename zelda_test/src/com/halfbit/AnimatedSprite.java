@@ -13,7 +13,7 @@ public class AnimatedSprite {
 
 	public AnimatedSprite(int framesPerSecond) {
 		this.framesPerSecond = framesPerSecond;
-		this.imageSize = new Dimension(52,64);
+		this.imageSize = new Dimension(64,64);
 	}
 	
 	protected void setFrames(Frame[] frames) {

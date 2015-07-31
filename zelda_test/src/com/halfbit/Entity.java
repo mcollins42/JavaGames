@@ -23,9 +23,9 @@ public class Entity {
 	protected Facing facing;
 	protected boolean moving = false;
 	
-	public Entity(AnimatedSprite animatedspriteN, AnimatedSprite animatedspriteE, AnimatedSprite animatedspriteW, AnimatedSprite animatedspriteS, Point startPosition) {
+	public Entity(AnimatedSprite animatedspriteN, AnimatedSprite animatedspriteE, AnimatedSprite animatedspriteW, AnimatedSprite animatedspriteS, Point startPosition, Facing facing) {
 		position = startPosition;
-		facing = Facing.SOUTH;
+		this.facing = facing;
 		moving = false;
 		
 		facingSpriteMap = new HashMap<>();

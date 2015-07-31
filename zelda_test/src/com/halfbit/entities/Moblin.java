@@ -4,7 +4,6 @@ import java.awt.Point;
 import java.util.Random;
 
 import com.halfbit.Entity;
-import com.halfbit.MoblinSpear;
 import com.halfbit.sprites.MoblinWalkE;
 import com.halfbit.sprites.MoblinWalkN;
 import com.halfbit.sprites.MoblinWalkS;
@@ -17,14 +16,20 @@ public class Moblin extends Entity {
 	static {
 		random = new Random();
 	}
+	
+	private int rechargeDelay = 0;
+	
 	public Moblin(Point position) {
-		super(new MoblinWalkN(), new MoblinWalkS(), new MoblinWalkE(), new MoblinWalkW(), position);
+		super(new MoblinWalkN(), new MoblinWalkS(), new MoblinWalkE(), new MoblinWalkW(), position, Facing.SOUTH);
 	}
 	
 	
 	@Override
 	public Entity update(Point position) {
 		super.update(position);
+		if (rechargeDelay > 0) {
+			rechargeDelay--;
+		}
 		int x = this.position.x;
 		int y = this.position.y;
 		if(position.x >= x && position.x <= x + getWidth()) {
@@ -52,6 +57,9 @@ public class Moblin extends Entity {
 	}
 	
 	public Entity shoot(Facing direction) {
+		if (rechargeDelay > 0) return null;
+		
+		this.rechargeDelay = 30;
 		return new MoblinSpear(direction, position);
 	}
 	

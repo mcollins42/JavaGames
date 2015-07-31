@@ -93,6 +93,9 @@ public class Zelda extends Canvas {
 					projectiles.add(projectile);
 				}
 			}
+			for (Entity projectile: projectiles) {
+				projectile.update(link.position);
+			}
 			// Get hold of a graphics context for the accelerated surface.
 			Graphics2D g = (Graphics2D) strategy.getDrawGraphics();
 			if (keyHandler.leftPressed && !keyHandler.rightPressed) {

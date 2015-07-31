@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.halfbit.Entity;
+import com.halfbit.Entity.Facing;
 import com.halfbit.sprites.LinkWalkE;
 import com.halfbit.sprites.LinkWalkN;
 import com.halfbit.sprites.LinkWalkS;
@@ -14,6 +15,6 @@ import com.halfbit.sprites.LinkWalkW;
 public class Player extends Entity {
 	
 	public Player() {
-		super(new LinkWalkN(), new LinkWalkE(), new LinkWalkW(), new LinkWalkS(), new Point(375,280));
+		super(new LinkWalkN(), new LinkWalkE(), new LinkWalkW(), new LinkWalkS(), new Point(375,280), Facing.SOUTH);
 	}
 }
